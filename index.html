@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="google" value="notranslate">
-    <link rel="shortcut icon" href="static/favicon.ico">
-    <title>Scratch 3.0 GUI</title>
-  </head>
-  <body>
-  <script type="text/javascript" src="lib.min.js"></script><script type="text/javascript" src="chunks/gui.js"></script></body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1,user-scalable=no"
+    name="viewport" />
+  <meta name="google" value="notranslate">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <link rel="shortcut icon" href="static/favicon.ico">
+  <title>Scratch 3.0 GUI</title>
+  <link rel="mainfest" href="./mainfest.json" />
+</head>
+
+<body>
+  <script type="text/javascript" src="lib.min.js"></script>
+  <script type="text/javascript" src="chunks/gui.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function () {
+        navigator.serviceWorker.register("/serviceWorker.js").then(
+          function (registration) {
+            console.log(
+              "ServiceWorker registration successful with scope: ",
+              registration.scope
+            );
+          },
+          function (err) {
+            console.error("ServiceWorker registration failed: ", err);
+          }
+        );
+      });
+    }
+  </script>
+</body>
+
 </html>
